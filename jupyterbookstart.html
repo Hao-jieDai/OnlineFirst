@@ -782,7 +782,9 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
 <p>通常，书籍网站将在几分钟后可以通过以下URL在线查看：<br />
 <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code><br />
 以本书为例，本书的网站为：<br />
-<a class="reference external" href="https://hao-jiedai.github.io/OnlineFirst/"><code class="docutils literal notranslate"><span class="pre">https://hao-jiedai.github.io/OnlineFirst/</span></code></a></p>
+<a class="reference external" href="https://hao-jiedai.github.io/OnlineFirst/"><code class="docutils literal notranslate"><span class="pre">https://hao-jiedai.github.io/OnlineFirst/</span></code></a><br />
+本地地址为：
+[<code class="docutils literal notranslate"><span class="pre">file:///D:/JupyterBook/OnlineFirst/_build/html/intro.html</span></code>](file:///D:/JupyterBook/OnlineFirst/_build/html/intro.html)</p>
 </section>
 <section id="id12">
 <h3><strong>1.5.3 书籍后续的更新</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
@@ -791,7 +793,28 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
 和之前一样使用<code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code>将重新构建的HTML推送到<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>分支上。<br />
 根据测试上述步骤似乎行不通，只能从复制那一步重新做起。</p>
 <p><strong>每次更新的时候，应该构建的图书<code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">OnlineFirst</span></code>而不是本地版本。</strong><br />
-同时会出现logo缺失的问题。</p>
+同时会出现logo缺失的问题。似乎与logo的名字有关。<br />
+<strong>再次给出总结之后的更新流程</strong></p>
+<ul>
+<li><p>1.重新构建在线图书</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="n">OnlineFirst</span>
+</pre></div>
+</div>
+</li>
+<li><p>2.将更新后的书籍推送到GitHub</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">OnlineFirst</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">./*</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;updating + date&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+</li>
+<li><p>3.从书籍根目录的main分支（应包含<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹）调用<code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>并将其指向HTML文件，命令行如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span><span class="w"> </span><span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 </section>
 <section id="id13">
