@@ -404,6 +404,8 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git"><strong>关于Git的下载</strong></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-pages"><strong>使用 GitHub Pages 在线发布书籍</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>书籍后续的更新</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -663,21 +665,44 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 <section id="id11">
 <h3><strong>为书籍创建在线仓库</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>为了将托管的书籍和书籍的源文件相连接，需要将图书的源文件放在公共仓库中。</p>
-<ul class="simple">
-<li><p>1.首先，登录 GitHub，然后进入 “create a new repository” <a class="reference external" href="https://github.com/new">页面</a>。</p></li>
+<ul>
+<li><p>1.首先，登录 GitHub，然后进入 <a class="reference external" href="https://github.com/new">“create a new repository” 页面</a>。</p></li>
 <li><p>2.接下来，给在线仓库提供名称和描述。公开仓库，并<strong>不要</strong>使用README文件进行初始化。然后单击“Create repository”。</p></li>
-<li><p>3.现在，将目前为空的在线仓库克隆到本地计算机上的某个位置上。通过命令行使用以下命令执行该操作：</p></li>
-</ul>
+<li><p>3.现在，将目前为空的在线仓库克隆到本地计算机上的某个位置上。通过命令行使用以下命令执行该操作：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">org</span><span class="o">&gt;/&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">repository</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p id="lab1">其中，<code class="docutils literal notranslate"><span class="pre">&lt;my-org&gt;</span></code>是指GitHub的名字，<code class="docutils literal notranslate"><span class="pre">&lt;my-repository-name&gt;</span></code>是指刚刚新创建的仓库的名称。</p>
+<p>其中，<code class="docutils literal notranslate"><span class="pre">&lt;my-org&gt;</span></code>是指GitHub的名字，<code class="docutils literal notranslate"><span class="pre">&lt;my-repository-name&gt;</span></code>是指刚刚新创建的仓库的名称。<br />
+笔者在进行到上述克隆步骤时发现，并没有在本地下载GitHub。因此在此处提供一个<a class="reference internal" href="#lab1"><span class="std std-ref">GitHub下载的简单流程</span></a>。<br />
+以笔者的GitHub账号和本书地址为例，命令行如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Hao</span><span class="o">-</span><span class="n">jieDai</span><span class="o">/</span><span class="n">OnlineFirst</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>由于目前的库是空的，因此会输出以下结果：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;OnlineFirst&#39;</span><span class="o">...</span>
+<span class="n">warning</span><span class="p">:</span> <span class="n">You</span> <span class="n">appear</span> <span class="n">to</span> <span class="n">have</span> <span class="n">cloned</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">repository</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>4.现在将书籍文件和文件夹复制到这个新克隆的存储库中。如果书籍文件名为<code class="docutils literal notranslate"><span class="pre">testbook</span></code>，仓库名为<code class="docutils literal notranslate"><span class="pre">onlinebook</span></code>，命令行如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">testbook</span><span class="o">/*</span> <span class="n">onlinebook</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p>5.现在需要同步本地和远程（即在线）仓库。可以使用以下命令执行此作：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">onlinebook</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">./*</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;adding my first book!&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+</li>
+</ul>
 <section id="git">
-<h4><strong>关于Git的下载</strong><a class="headerlink" href="#git" title="Link to this heading">#</a></h4>
-<p>笔者在进行到上述步骤时发现，并没有在本地下载GitHub。因此在此处提供一个GitHub下载的简单流程。<br />
-流程由Deepseek提供，根据实际操作进行完善。</p>
+<span id="lab1"></span><h4><strong>关于Git的下载</strong><a class="headerlink" href="#git" title="Link to this heading">#</a></h4>
+<p>流程由Deepseek提供，根据实际操作进行完善。</p>
 <ul>
-<li><p>1.<strong>下载Git安装程序</strong> 访问Git的<a class="reference external" href="https://git-scm.com/download/win">官方网址</a></p></li>
+<li><p>1.<strong>下载Git安装程序</strong> 访问Git的<a class="reference external" href="https://git-scm.com/download/win">官方网址</a> 。</p></li>
 <li><p>2.<strong>运行安装程序</strong> 下载的程序名为<code class="docutils literal notranslate"><span class="pre">Git-*.exe</span></code>。</p>
 <ul class="simple">
 <li><p>根据以下步骤配置：选择组件：勾选所有选项（特别是 “Git Bash Here” 和 “Git GUI Here”）</p></li>
@@ -689,8 +714,8 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 <li><p>其他选项：全部保持默认设置</p></li>
 </ul>
 </li>
-<li><p>3.<strong>完成安装</strong> 点击<code class="docutils literal notranslate"><span class="pre">install</span></code>安装，安装完成后取消勾选”View Release Notes”，点击”Finish”。</p></li>
-<li><p>4.<strong>验证Git安装</strong> 根据笔者经验，安装完成后<strong>先重启下电脑</strong>，确保环境变量已经更新。<br />
+<li><p>3.<strong>完成安装</strong>  点击<code class="docutils literal notranslate"><span class="pre">install</span></code>安装，安装完成后取消勾选”View Release Notes”，点击”Finish”。</p></li>
+<li><p>4.<strong>验证Git安装</strong>  根据笔者经验，安装完成后<strong>先重启下电脑</strong>，确保环境变量已经更新。<br />
 在命令行中验证Git是否安装完成。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
@@ -708,8 +733,54 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 </div>
 </li>
 </ul>
-<p>回到<a class="reference internal" href="#lab1"><span class="std std-ref">创建仓库的步骤</span></a>中，</p>
 </section>
+</section>
+<section id="github-pages">
+<h3><strong>使用 GitHub Pages 在线发布书籍</strong><a class="headerlink" href="#github-pages" title="Link to this heading">#</a></h3>
+<p>通过刚刚的步骤，书籍的源文件已经被上传至GitHub存储库。这样，其他人可以公开查看书籍内容。<br />
+接下来将进行在线发布，使书籍以网站的形式可以被查看。<br />
+<strong>以下内容笔者并未完全理解，但通过以下步骤确实可以实现上述目标。</strong>
+将GitHub Pages与构建的HTML一起使用的最简单方法是使用<a class="reference external" href="https://github.com/c-w/ghp-import"><code class="docutils literal notranslate"><span class="pre">ghp-import</span></code></a>包。<code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>是一个轻量级Python软件包，可以轻松地将HTML内容推送到GitHub存储库。<br />
+ghp-import的工作原理是将构建的书籍的所有内容（即<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹 ）复制到存储库中名为<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>的分支(branch)，然后将其推送到GitHub。ghp-import将自动为您创建并填充<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>分支。要使用ghp-import通过GitHub Pages在线托管书籍，请按照以下步骤操作：</p>
+<ul>
+<li><p>1.<strong>安装<code class="docutils literal notranslate"><span class="pre">ghp-import</span></code></strong>。可以使用以下命令在命令行中安装它：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+</pre></div>
+</div>
+</li>
+<li><p>2.更新GitHub页面站点的设置,<strong>使用一个<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>分支托管网站</strong>。</p></li>
+<li><p>3.从书籍根目录的main分支（应包含<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹）调用<code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>并将其指向HTML文件，命令行如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span><span class="w"> </span><span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>可能的输出如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">275</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">275</span><span class="o">/</span><span class="mi">275</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">12</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">120</span><span class="o">/</span><span class="mi">120</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">275</span><span class="o">/</span><span class="mi">275</span><span class="p">),</span> <span class="mf">2.11</span> <span class="n">MiB</span> <span class="o">|</span> <span class="mf">1.93</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">275</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">106</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">275</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">106</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">106</span><span class="o">/</span><span class="mi">106</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">pull</span> <span class="n">request</span> <span class="k">for</span> <span class="s1">&#39;gh-pages&#39;</span> <span class="n">on</span> <span class="n">GitHub</span> <span class="n">by</span> <span class="n">visiting</span><span class="p">:</span>
+<span class="n">remote</span><span class="p">:</span>      <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Hao</span><span class="o">-</span><span class="n">jieDai</span><span class="o">/</span><span class="n">OnlineFirst</span><span class="o">/</span><span class="n">pull</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+<span class="n">remote</span><span class="p">:</span>
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Hao</span><span class="o">-</span><span class="n">jieDai</span><span class="o">/</span><span class="n">OnlineFirst</span><span class="o">.</span><span class="n">git</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">gh</span><span class="o">-</span><span class="n">pages</span> <span class="o">-&gt;</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>通常，书籍网站将在几分钟后可以通过以下URL在线查看：<br />
+<code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code><br />
+以本书为例，本书的网站为：<br />
+<a class="reference external" href="https://hao-jiedai.github.io/OnlineFirst/"><code class="docutils literal notranslate"><span class="pre">https://hao-jiedai.github.io/OnlineFirst/</span></code></a></p>
+</section>
+<section id="id12">
+<h3><strong>书籍后续的更新</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>要更新在线书籍，需要在仓库的<code class="docutils literal notranslate"><span class="pre">main</span></code>分支上更改图书的内容。<br />
+使用<code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">testbook</span></code>重新构建图书<br />
+和之前一样使用<code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code>将重新构建的HTML推送到<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>分支上。</p>
 </section>
 </section>
 </section>
@@ -803,6 +874,8 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git"><strong>关于Git的下载</strong></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-pages"><strong>使用 GitHub Pages 在线发布书籍</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>书籍后续的更新</strong></a></li>
 </ul>
 </li>
 </ul>
