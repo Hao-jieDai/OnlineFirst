@@ -790,6 +790,8 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
 使用<code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">testbook</span></code>重新构建图书<br />
 和之前一样使用<code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code>将重新构建的HTML推送到<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>分支上。<br />
 根据测试上述步骤似乎行不通，只能从复制那一步重新做起。</p>
+<p><strong>每次更新的时候，应该构建的图书<code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">OnlineFirst</span></code>而不是本地版本。</strong><br />
+同时会出现logo缺失的问题。</p>
 </section>
 </section>
 <section id="id13">
