@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>第一章 Jupyter Book 入门 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'jupyterbookstart';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/CanCarbon.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/CanCarbon.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">第一章 Jupyter Book 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fjupyterbookstart.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/jupyterbookstart.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>第一章 Jupyter Book 入门</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>1.1 Jupyter Book 安装</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1.2 Jupyter Book 构建的一般流程</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>1.3 Jupyter Book 创建模板书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-yml"><strong>书籍配置文件(_config.yml)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toc-yml"><strong>目录文件(_toc.yml)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>内容文件</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-files">Jupyter Notebook files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown-files">MyST Markdown files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1.4 Jupyter Book 构建图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>源文件与构建文件</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>关于页面缓存</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html"><strong>预览构建的HTML</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>创建自己的内容文件并输出</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.5 <strong>Jupyter Book 发布图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>为书籍创建在线仓库</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git"><strong>关于Git的下载</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book">
+<h1>第一章 Jupyter Book 入门<a class="headerlink" href="#jupyter-book" title="Link to this heading">#</a></h1>
+<p><strong>以下内容参考自<a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book官方文档</a>，结合自身实际操作总结完整流程。</strong></p>
+<section id="id1">
+<h2><strong>1.1 Jupyter Book 安装</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>首先需要安装 Jupyter Book，pip具体命令如下：</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">-U</span> <span class="n">jupyter-book</span>
+</pre></div>
+</div>
+<p>其次也可以使用conda命令进行生成，需要注意的是conda命令<strong>只能在powershell中使用</strong>。</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">-c</span> <span class="n">conda-forge</span> <span class="n">jupyter-book</span>
+</pre></div>
+</div>
+<p>安装完成后，执行帮助命令来查看是否成功安装。</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter-book</span> <span class="p">-</span><span class="n">-help</span>
+</pre></div>
+</div>
+<p>将输出以下帮助信息：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">jb</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Build</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">books</span> <span class="k">with</span> <span class="n">Jupyter</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">version</span>   <span class="n">Show</span> <span class="n">the</span> <span class="n">version</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">build</span>   <span class="n">Convert</span> <span class="n">your</span> <span class="n">book</span><span class="s1">&#39;s or page&#39;</span><span class="n">s</span> <span class="n">content</span> <span class="n">to</span> <span class="n">HTML</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">PDF</span><span class="o">.</span>
+  <span class="n">clean</span>   <span class="n">Empty</span> <span class="n">the</span> <span class="n">_build</span> <span class="n">directory</span> <span class="k">except</span> <span class="n">jupyter_cache</span><span class="o">.</span>
+  <span class="n">config</span>  <span class="n">Inspect</span> <span class="n">your</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> <span class="n">file</span><span class="o">.</span>
+  <span class="n">create</span>  <span class="n">Create</span> <span class="n">a</span> <span class="n">Jupyter</span> <span class="n">Book</span> <span class="n">template</span> <span class="n">that</span> <span class="n">you</span> <span class="n">can</span> <span class="n">customize</span><span class="o">.</span>
+  <span class="n">myst</span>    <span class="n">Manipulate</span> <span class="n">MyST</span> <span class="n">markdown</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">toc</span>     <span class="n">Command</span><span class="o">-</span><span class="n">line</span> <span class="k">for</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">external</span><span class="o">-</span><span class="n">toc</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2><strong>1.2 Jupyter Book 构建的一般流程</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>构建Jupyter Book大致可以分为以下三个步骤：</p>
+<p><strong>1.创建图书(Create your book’s context)</strong>。通过文件夹、文件和配置的集合来构建书籍的具体内容。<br />
+<strong>2.构建图书(Build your book)</strong>。使用jupyter book命令行，将内容转换为HTML、PDF等格式。<br />
+<strong>3.出版图书(Publish your book)</strong>。构建图书之后，在线发布图书分享给其他人。</p>
+<p>以下三小节内容将以官网提供的模板书为例，熟悉完整流程。</p>
+</section>
+<section id="id3">
+<h2><strong>1.3 Jupyter Book 创建模板书</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>通过构建一个模板书，来对Jupyter Book的书籍结构有一个初步的认知。<br />
+Jupyter Book捆绑了一个轻量级示例书，以帮助使用者了解书籍的结构。<br />
+在通过构建一个模板书之前，建议先创建一个文件夹，<strong>并在powershell中进入这个文件夹来实现接下来的操作</strong>。<br />
+通过运行以下命令创建示例书籍：</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter-book</span> <span class="n">create</span> <span class="n">testbook</span>
+</pre></div>
+</div>
+<p>在官网中，Jupyter Book提供的命令中书籍名称为<code class="docutils literal notranslate"><span class="pre">mynewbook</span></code>，由于笔者在测试中已经创建了该书，因此以下过程均采取<code class="docutils literal notranslate"><span class="pre">testbook</span></code>为例。事实上两者并无区别。<br />
+输入上述命令行后，在创建的文件夹中将会出现testbook文件夹，其中包含如下文件：</p>
+<p><img alt="本地图片" src="_images/testbook_file.png" /></p>
+<p>接下来将在<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>配置文件和<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>目录文件中，展开对模板书具体构成的介绍。</p>
+<section id="config-yml">
+<h3><strong>书籍配置文件(_config.yml)</strong><a class="headerlink" href="#config-yml" title="Link to this heading">#</a></h3>
+<p>书籍的所有配置全部在<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>文件中，该文件为YAML格式。<br />
+在<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>文件中，使用者可以在该文件中为书籍定义元数据，添加书籍的logo以及打开不同的“交互式”按钮等等。<br />
+下面给出了模板书中的<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>文件示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">title</span><span class="p">:</span> <span class="n">My</span> <span class="n">sample</span> <span class="n">book</span>
+<span class="n">author</span><span class="p">:</span> <span class="n">The</span> <span class="n">Jupyter</span> <span class="n">Book</span> <span class="n">Community</span>
+<span class="n">logo</span><span class="p">:</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+
+<span class="n">execute</span><span class="p">:</span>
+  <span class="n">execute_notebooks</span><span class="p">:</span> <span class="n">force</span>
+
+<span class="n">bibtex_bibfiles</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>其中：<br />
+<code class="docutils literal notranslate"><span class="pre">title</span></code>：定义书籍的标题，它将显示在左侧边栏中。（但我并没看到）<br />
+<code class="docutils literal notranslate"><span class="pre">author</span></code>：定义书籍的作者。<br />
+<code class="docutils literal notranslate"><span class="pre">logo</span></code>：定义书籍的logo，也将显示在左侧边栏中。<br />
+<code class="docutils literal notranslate"><span class="pre">execute</span></code>：包含用于控制执行和缓存的配置选项的集合。<br />
+<code class="docutils literal notranslate"><span class="pre">execute_notebooks</span></code>：“force” 指示Jupyter Book在每次构建书籍时强制执行任何计算内容。默认情况下，Jupyter Book 执行并缓存所有书籍内容。<br />
+<code class="docutils literal notranslate"><span class="pre">bibtex_bibfiles</span></code>：是定义Jupyter Book的书目文件的部分。此配置将激活书籍的<strong>引文</strong>。</p>
+<p>更多关于配置文件的信息，请参考<a class="reference external" href="https://jupyterbook.org/en/stable/customize/config.html">Jupyter Book配置文件</a>。</p>
+</section>
+<section id="toc-yml">
+<h3><strong>目录文件(_toc.yml)</strong><a class="headerlink" href="#toc-yml" title="Link to this heading">#</a></h3>
+<p>Jupyter Book使用目录来定义书籍的结构。例如，书籍的章节、子章节等。<br />
+下面是模板书中<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>目录文件的具体内容，与配置文件相同，其也是一个YAML格式的文件。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">:</span> <span class="n">jb</span><span class="o">-</span><span class="n">book</span>
+<span class="n">root</span><span class="p">:</span> <span class="n">intro</span>
+<span class="n">chapters</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">notebooks</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span>
+</pre></div>
+</div>
+<p>每个file都将对应书籍的一个文件。<br />
+<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>使用<code class="docutils literal notranslate"><span class="pre">jb-article</span></code>或<code class="docutils literal notranslate"><span class="pre">jb-book</span></code>等格式进行排列。 <code class="docutils literal notranslate"><span class="pre">root</span></code>项被视为登陆页面（对于<code class="docutils literal notranslate"><span class="pre">html</span></code>构建），并用作 front matter（对于<code class="docutils literal notranslate"><span class="pre">latex</span></code>构建）。<br />
+对于<code class="docutils literal notranslate"><span class="pre">jb-book</span></code>，可以在<code class="docutils literal notranslate"><span class="pre">yml</span></code>文件中的<code class="docutils literal notranslate"><span class="pre">chapters：</span></code>部分下添加后续章节。（目前还没有完全搞懂如何添加二级标题至左侧的目录列中）<br />
+每个条目都与一个文件相关，它们应添加为不带扩展名的名称，并且是相对于图书的根文件夹。<strong>每个章节的标题将从文件中的标题推断出来</strong>。<br />
+更多关于目录文件的信息，请参考<a class="reference external" href="https://jupyterbook.org/en/stable/structure/toc.html">Jupyter Book目录文件</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>注：在修改目录文件之后，似乎无法通过删除文件的方式来刷新目录，需要重新构建书籍。
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><strong>内容文件</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>文本文件集合构成了图书的内容。这些文件可以是多种类型的文件之一，例如：markdown(<code class="docutils literal notranslate"><span class="pre">.md</span></code>)、Jupyter Notebook(<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) 或reStructuredText(<code class="docutils literal notranslate"><span class="pre">.rst</span></code>)文件。<br />
+模板书对于上述三种类型的文件分别给出了一个示例：</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 一个markdown文件(<code class="docutils literal notranslate"><span class="pre">markdown.md</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 一个Jupyter Notebook文件(<code class="docutils literal notranslate"><span class="pre">notebooks.ipynb</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 一个MyST Markdown Notebook文件(<code class="docutils literal notranslate"><span class="pre">markdown-notebooks.md</span></code>)</p></li>
+</ul>
+<p>由于技术力有限，笔者对于上述文件的理解不深，在本书的写作过程中，笔者倾向于全部使用<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>格式文件来完成本书的写作。<br />
+接下来只简要介绍不同的文件类型。</p>
+<section id="markdown-files">
+<h4>Markdown files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h4>
+<p>Markdown是一种使用额外的字符和语法来构建文本的方法，这些字符和语法赋予它额外的含义。<br />
+在这里给出一些常用的语法以供参考：</p>
+<ul class="simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">``</span></code>来表示<code class="docutils literal notranslate"><span class="pre">带框文字</span></code></p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">**加粗**</span></code>来表示<strong>加粗</strong></p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">*斜体*</span></code>来表示<em>斜体</em></p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">#</span></code>来表示文章标题</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code>来表示换行</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">```</span></code>来表示代码块</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">[文本](URL)</span></code>来表示超链接，<a class="reference external" href="https://mp.weixin.qq.com/s/M62dg1vhyuWcdYaot1XVxA">淡月疏星Xenon意</a>(欢迎关注！)</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">![图片](图片路径</span> <span class="pre">&quot;图片title&quot;)</span></code>来表示图片(需要现在对应的书籍根目录下创建images)<br />
+<img alt="本地图片" src="_images/example.png" /></p></li>
+<li><p>……<br />
+还有一些MyST Markdown中的指令，但这些指令在<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>文件中似乎无法呈现，此处不再举例。</p></li>
+</ul>
+</section>
+<section id="jupyter-notebook-files">
+<h4>Jupyter Notebook files<a class="headerlink" href="#jupyter-notebook-files" title="Link to this heading">#</a></h4>
+<p>Jupyter Book支持的另一种文件类型是Jupyter Notebook，以<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>结尾。<br />
+Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code class="docutils literal notranslate"><span class="pre">markdown</span></code>的叙述内容，也能加入<code class="docutils literal notranslate"><span class="pre">code</span></code>代码块。<br />
+默认情况下，当 Jupyter Book构建(build)书籍时，将执行notebook文件并缓存其输出。在后续构建中，仅当文件页面的代码发生更改时，才会重新执行页面。<br />
+关于<a class="reference external" href="https://jupyterbook.org/en/stable/content/execute.html">执行和缓存页面</a>、<a class="reference external" href="https://jupyterbook.org/en/stable/content/code-outputs.html">代码输出</a>以及<a class="reference external" href="https://jupyterbook.org/en/stable/interactive/interactive.html">交互式数据可视化</a>等内容，笔者将在后续学习后更新。</p>
+</section>
+<section id="myst-markdown-files">
+<h4>MyST Markdown files<a class="headerlink" href="#myst-markdown-files" title="Link to this heading">#</a></h4>
+<p>MyST Markdown是一种基于Markdown的文件格式，它增加了对数学符号、角色和指令的支持。<br />
+在Jupyter Book中，MyST Markdown文件的扩展名是<code class="docutils literal notranslate"><span class="pre">.md</span></code>。<br />
+有关MyST Markdown笔记本的更多信息，请参阅<a class="reference external" href="https://jupyterbook.org/en/stable/file-types/myst-notebooks.html#file-types-myst-notebooks">完全用Markdown编写的笔记本</a>。</p>
+</section>
+</section>
+</section>
+<section id="id5">
+<h2><strong>1.4 Jupyter Book 构建图书</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>添加了文件内容并完善了书籍配置之后，就可以构建(build)图书了。在命令行中使用<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code>来构建图书。<br />
+目前Jupyter Book支持两种格式的书籍输出，分别是HTML网站和基于HTML网站导出的PDF格式文件。在本节中重点介绍HTML格式的书籍输出。<br />
+以前文提及的testbook文件为例，使用以下命令行来构建图书：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="n">testbook</span>
+</pre></div>
+</div>
+<p>或者进行简写：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="n">testbook</span>
+</pre></div>
+</div>
+<p>输出完成后，将会在testbook文件夹中观察到出现名为<code class="docutils literal notranslate"><span class="pre">build</span></code>的文件夹，进入其中的HTML文件夹后，即可以打开HTML格式的书籍。<br />
+<img alt="testbook示例图片" src="_images/testbook_HTML.png" /></p>
+<p><strong>先决条件</strong>：为了保证每个页面都能成功构建HTML，需要完整按照上述的步骤来进行操作。在<code class="docutils literal notranslate"><span class="pre">testbook</span></code>文件夹中，应当要有一个目录文件<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>，一个配置文件<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>，以及一个notebook或者markdown文件的集合。</p>
+<section id="id6">
+<h3><strong>源文件与构建文件</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>此时，文件夹中已经创建了Jupyter Notebook文件、Markdown文件和配置文件(包括<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>和<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>)的组合。这些文件是源文件。<br />
+源文件包含Jupyter Book构建书籍所需的所有内容和配置。<br />
+此外，目前也已经在<code class="docutils literal notranslate"><span class="pre">build</span></code>文件夹中创建了书籍输出的集合。该文件夹包含了使用jb的build命令之后的所有输出，这些文件用于在浏览器中查看内容或与他人共享。<br />
+发布图书的最佳实践是为源文件和构建文件使用单独的分支。稍后将做详细介绍。</p>
+</section>
+<section id="id7">
+<h3><strong>关于页面缓存</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>默认情况下，Jupyter Book将仅为自上次构建书籍以来已更新的页面构建 HTML。<br />
+如果要强制Jupyter Book重新构建特定页面，可以编辑书籍文件夹中的相应文件，或删除<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹中该页面的HTML。
+还可以使用<code class="docutils literal notranslate"><span class="pre">--all</span></code>选项发出完全重建的命令。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="o">--</span><span class="nb">all</span> <span class="n">testbook</span>
+</pre></div>
+</div>
+<p id="id8">或者使用<code class="docutils literal notranslate"><span class="pre">-clean</span></code>将该书籍删去之后再重新构建</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="n">clean</span> <span class="n">testbook</span>
+</pre></div>
+</div>
+</section>
+<section id="html">
+<h3><strong>预览构建的HTML</strong><a class="headerlink" href="#html" title="Link to this heading">#</a></h3>
+<p>可以直接在<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹中查看HTML。<br />
+或者在浏览器中输入HTML所在的路径，例如<code class="docutils literal notranslate"><span class="pre">file:///D:/JupyterBook/testbook/_build/html/intro.html</span></code>。</p>
+</section>
+<section id="id9">
+<h3><strong>创建自己的内容文件并输出</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>创建自己的内容文件并输出大致可以分为以下三个步骤，此处参考官网给出的示例进行演示。<br />
+<strong>1.创建一个内容文件</strong><br />
+在testbook文件夹中，创建一个名为<code class="docutils literal notranslate"><span class="pre">mymarkdownfile.md</span></code>的文件，在文件中编辑以下内容。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s my sample title</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">text</span><span class="o">.</span>
+
+<span class="p">(</span><span class="n">section</span><span class="o">-</span><span class="n">label</span><span class="p">)</span><span class="o">=</span>
+<span class="c1">## Here&#39;s my first section</span>
+
+<span class="n">Here</span> <span class="ow">is</span> <span class="n">a</span> <span class="p">[</span><span class="n">reference</span> <span class="n">to</span> <span class="n">the</span> <span class="n">intro</span><span class="p">](</span><span class="n">intro</span><span class="o">.</span><span class="n">md</span><span class="p">)</span><span class="o">.</span> <span class="n">Here</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="p">[](</span><span class="n">section</span><span class="o">-</span><span class="n">label</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>在文件中给出了两种markdown的语法，它们都与<strong>交叉引用</strong>相关。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(section-label)=</span></code>是附加到节标题的标签。它引用后面的任何标题，并允许稍后在文本中引用此标签。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[link</span> <span class="pre">text](link-target)</span></code>语法是在Markdown中指定链接的方式。在这里，作用是链接到另一个页面，以及在上面创建的标签。</p></li>
+</ul>
+<p><strong>2.将文件添加入目录文件中</strong><br />
+在前文中已经创建了一个新文件，接下来需要将其添加入<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>文件中。<br />
+在<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>文件中添加一行，指向新文件。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">:</span> <span class="n">jb</span><span class="o">-</span><span class="n">book</span>
+<span class="n">root</span><span class="p">:</span> <span class="n">intro</span>
+<span class="n">chapters</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">notebooks</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">mymarkdownfile</span>
+</pre></div>
+</div>
+<p><strong>3.重新构建书籍</strong><br />
+在重新构建书籍之前，请确保<strong>新文件和目录文件的修改都已被保存</strong>。<br />
+重新运行<code class="docutils literal notranslate"><span class="pre">build</span></code>命令即可。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="n">testbook</span>
+</pre></div>
+</div>
+<p>新加入的文件页面如下所示：<br />
+<img alt="新文件页面" src="_images/mymarkdownfile.png" /></p>
+<p>交叉引用的展示:<br />
+<a class="reference internal" href="#id8"><span class="std std-ref">跳转至“或者使用<code class="docutils literal notranslate"><span class="pre">-clean</span></code>”前方</span></a><br />
+<strong>不一定要引用到标题，可以是任何地方。</strong><br />
+<a class="reference internal" href="markdown.html"><span class="std std-doc">跳转至“Markdown Files”该节</span></a></p>
+</section>
+</section>
+<section id="id10">
+<h2>1.5 <strong>Jupyter Book 发布图书</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<p>为图书构建了HTML之后，可以进行在线托管。在官方教程中，介绍了如何使用GitHub Pages来在线发布(publish)图书。</p>
+<section id="id11">
+<h3><strong>为书籍创建在线仓库</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>为了将托管的书籍和书籍的源文件相连接，需要将图书的源文件放在公共仓库中。</p>
+<ul class="simple">
+<li><p>1.首先，登录 GitHub，然后进入 “create a new repository” <a class="reference external" href="https://github.com/new">页面</a>。</p></li>
+<li><p>2.接下来，给在线仓库提供名称和描述。公开仓库，并<strong>不要</strong>使用README文件进行初始化。然后单击“Create repository”。</p></li>
+<li><p>3.现在，将目前为空的在线仓库克隆到本地计算机上的某个位置上。通过命令行使用以下命令执行该操作：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">org</span><span class="o">&gt;/&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">repository</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p id="lab1">其中，<code class="docutils literal notranslate"><span class="pre">&lt;my-org&gt;</span></code>是指GitHub的名字，<code class="docutils literal notranslate"><span class="pre">&lt;my-repository-name&gt;</span></code>是指刚刚新创建的仓库的名称。</p>
+<section id="git">
+<h4><strong>关于Git的下载</strong><a class="headerlink" href="#git" title="Link to this heading">#</a></h4>
+<p>笔者在进行到上述步骤时发现，并没有在本地下载GitHub。因此在此处提供一个GitHub下载的简单流程。<br />
+流程由Deepseek提供，根据实际操作进行完善。</p>
+<ul>
+<li><p>1.<strong>下载Git安装程序</strong> 访问Git的<a class="reference external" href="https://git-scm.com/download/win">官方网址</a></p></li>
+<li><p>2.<strong>运行安装程序</strong> 下载的程序名为<code class="docutils literal notranslate"><span class="pre">Git-*.exe</span></code>。</p>
+<ul class="simple">
+<li><p>根据以下步骤配置：选择组件：勾选所有选项（特别是 “Git Bash Here” 和 “Git GUI Here”）</p></li>
+<li><p>选择默认编辑器：推荐选择 “Use Visual Studio Code as Git’s default editor”（如果安装了 VS Code）</p></li>
+<li><p>调整 PATH 环境：选择 “Git from the command line and also from 3rd-party software”</p></li>
+<li><p>选择 HTTPS 传输后端：使用默认的 “Use the OpenSSL library”</p></li>
+<li><p>配置行尾符号转换：选择 “Checkout Windows-style, commit Unix-style line endings”</p></li>
+<li><p>配置终端模拟器：选择 “Use MinTTY (the default terminal of MSYS2)”</p></li>
+<li><p>其他选项：全部保持默认设置</p></li>
+</ul>
+</li>
+<li><p>3.<strong>完成安装</strong> 点击<code class="docutils literal notranslate"><span class="pre">install</span></code>安装，安装完成后取消勾选”View Release Notes”，点击”Finish”。</p></li>
+<li><p>4.<strong>验证Git安装</strong> 根据笔者经验，安装完成后<strong>先重启下电脑</strong>，确保环境变量已经更新。<br />
+在命令行中验证Git是否安装完成。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>输出类似为：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.50.0</span><span class="o">.</span><span class="n">windows</span><span class="mf">.1</span>
+</pre></div>
+</div>
+</li>
+<li><p>5.<strong>配置Git</strong> 首次使用Git时需要认证用户名和邮箱，否则后续使用<strong>会报错</strong>。<br />
+在命令行中完成验证。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;Your Name&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;your.email@example.com&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>回到<a class="reference internal" href="#lab1"><span class="std std-ref">创建仓库的步骤</span></a>中，</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown Files</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>1.1 Jupyter Book 安装</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1.2 Jupyter Book 构建的一般流程</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>1.3 Jupyter Book 创建模板书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-yml"><strong>书籍配置文件(_config.yml)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toc-yml"><strong>目录文件(_toc.yml)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>内容文件</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-files">Jupyter Notebook files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown-files">MyST Markdown files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1.4 Jupyter Book 构建图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>源文件与构建文件</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>关于页面缓存</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html"><strong>预览构建的HTML</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>创建自己的内容文件并输出</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.5 <strong>Jupyter Book 发布图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>为书籍创建在线仓库</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git"><strong>关于Git的下载</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CanCarbon
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
