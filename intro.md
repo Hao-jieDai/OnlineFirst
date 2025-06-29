@@ -1,11 +1,11 @@
-# Welcome to your Jupyter Book
+# Welcome to My Book
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
 
-Check out the content pages bundled with this sample book to see more.
+编写此书的目的在于为一些朋友解答使用某些工具入门时可能存在的问题，以及一些个人经验分享。  
+阅读此书时，请将左上角的模式调为`夜间模式`，以带来更好的阅读体验。  
+更多关于此书的相关信息可以参见[Jupyter Book 官网](https://jupyterbook.org)。
+
+本书目录如下：
 
 ```{tableofcontents}
 ```
