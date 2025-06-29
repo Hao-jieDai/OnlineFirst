@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: jupyterbookstart
+- file: GCAMstart
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
