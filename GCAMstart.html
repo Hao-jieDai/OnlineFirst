@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -357,7 +357,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -373,6 +375,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>2.1 GCAM-China 基准情景</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#java">Java环境配置</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -385,7 +398,120 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="gcam-china">
 <h1>二、GCAM-China 使用入门<a class="headerlink" href="#gcam-china" title="Link to this heading">#</a></h1>
 <p><strong>以下内容参考自<a class="reference external" href="https://jgcri.github.io/gcam-doc/">GCAM官方文档</a>、<a class="reference external" href="https://umd-cgs.github.io/metarepo_gcam-china/index.html">GCAM-China官方文档</a>。</strong><br />
-这里给出GCAM-China模型<a class="reference external" href="https://github.com/umd-cgs/gcam-china/releases/tag/gcam-china-v7.1">最新版本下载链接</a></p>
+这里给出GCAM-China模型<a class="reference external" href="https://github.com/umd-cgs/gcam-china/releases/tag/gcam-china-v7.1">最新版本下载链接</a>，下载名字较长的压缩包如<code class="docutils literal notranslate"><span class="pre">gcam-china-v7.1-Windows-Release-Package</span></code>，GitHub中直接提供的，<strong>名字较短的压缩包</strong>用于编写模型，似乎没有运行程序。</p>
+<section id="id1">
+<h2><strong>2.1 GCAM-China 基准情景</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>将下载的压缩包进行解压，即可直接使用GCAM-China模型。<br />
+<img alt="GCAM-China页面" src="_images/gcamchinapage.png" /><br />
+初次使用该模型，只需要用到<code class="docutils literal notranslate"><span class="pre">exe</span></code>，<code class="docutils literal notranslate"><span class="pre">ModelInterface</span></code>，<code class="docutils literal notranslate"><span class="pre">output</span></code>三个文件夹。<br />
+其中：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">exe</span></code>文件夹中包含了运行GCAM-China模型所需要的配置文件，点击<code class="docutils literal notranslate"><span class="pre">run-gcam.bat</span></code>文件即可运行。需要注意的是，在运行模型之前，需要电脑已经配置了Java环境，关于<a class="reference internal" href="jupyterbookstart.html#lab1"><span class="std std-ref">如何配置Java环境</span></a>，会在稍后给出简单的说明。<br />
+GCAM-China运行的过程中，会在以下几个页面进行停留：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">XML</span> <span class="n">parsing</span> <span class="n">complete</span><span class="o">.</span>
+<span class="n">Starting</span> <span class="n">new</span> <span class="n">scenario</span><span class="p">:</span> <span class="n">Reference</span>
+<span class="n">Mon</span> <span class="n">Jun</span> <span class="mi">30</span> <span class="mi">21</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">15</span> <span class="mi">2025</span><span class="p">:</span><span class="n">WARNING</span><span class="p">:</span><span class="n">Hector</span><span class="p">::</span><span class="n">Logger</span><span class="p">::</span><span class="n">printLogHeader</span><span class="p">:</span> <span class="n">hector</span> <span class="n">version</span> <span class="mf">3.2.0</span>
+<span class="n">Mon</span> <span class="n">Jun</span> <span class="mi">30</span> <span class="mi">21</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">15</span> <span class="mi">2025</span><span class="p">:</span><span class="n">WARNING</span><span class="p">:</span><span class="n">Hector</span><span class="p">::</span><span class="n">Logger</span><span class="p">::</span><span class="n">printLogHeader</span><span class="p">:</span> <span class="n">hector</span> <span class="n">version</span> <span class="mf">3.2.0</span>
+<span class="n">SEVERE</span> <span class="n">ERROR</span><span class="p">:</span><span class="n">geothermal</span> <span class="ow">in</span> <span class="n">China</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">related</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">activities</span><span class="o">.</span>
+<span class="n">SEVERE</span> <span class="n">ERROR</span><span class="p">:</span><span class="n">offshore</span> <span class="n">wind</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">China</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">related</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">activities</span><span class="o">.</span>
+<span class="n">SEVERE</span> <span class="n">ERROR</span><span class="p">:</span><span class="n">onshore</span> <span class="n">carbon</span><span class="o">-</span><span class="n">storage</span> <span class="ow">in</span> <span class="n">China</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">related</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">activities</span><span class="o">.</span>
+<span class="n">Starting</span> <span class="n">a</span> <span class="n">model</span> <span class="n">run</span><span class="o">.</span> <span class="n">Running</span> <span class="nb">all</span> <span class="n">periods</span><span class="o">.</span>
+<span class="n">Model</span> <span class="n">run</span> <span class="n">beginning</span><span class="o">.</span>
+<span class="n">Period</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">1975</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">Period</span> <span class="mi">21</span><span class="p">:</span> <span class="mi">2100</span>
+<span class="n">Model</span> <span class="n">solved</span> <span class="n">normally</span><span class="o">.</span> <span class="n">Iterations</span> <span class="n">period</span> <span class="mi">21</span><span class="p">:</span> <span class="mf">95.</span> <span class="n">Total</span> <span class="n">iterations</span><span class="p">:</span> <span class="mi">3074</span>
+
+<span class="n">All</span> <span class="n">model</span> <span class="n">periods</span> <span class="n">solved</span> <span class="n">correctly</span><span class="o">.</span>
+<span class="n">Mon</span> <span class="n">Jun</span> <span class="mi">30</span> <span class="mi">21</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">26</span> <span class="mi">2025</span><span class="p">:</span><span class="n">WARNING</span><span class="p">:</span><span class="n">Hector</span><span class="p">::</span><span class="n">Logger</span><span class="p">::</span><span class="n">printLogHeader</span><span class="p">:</span> <span class="n">hector</span> <span class="n">version</span> <span class="mf">3.2.0</span>
+<span class="n">Model</span> <span class="n">run</span> <span class="n">completed</span><span class="o">.</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Model</span> <span class="n">run</span> <span class="n">completed</span><span class="o">.</span>
+<span class="n">Printing</span> <span class="n">output</span>
+<span class="n">Starting</span> <span class="n">output</span> <span class="n">to</span> <span class="n">XML</span> <span class="n">Database</span><span class="o">.</span>
+<span class="n">D</span><span class="p">:</span><span class="o">/</span><span class="n">我的文件</span><span class="o">/</span><span class="n">学习资料6</span><span class="o">/</span><span class="n">GCAM</span><span class="o">-</span><span class="n">China</span> <span class="n">v7</span><span class="mf">.1</span><span class="o">/</span><span class="n">gcam</span><span class="o">-</span><span class="n">china</span><span class="o">-</span><span class="n">v7</span><span class="mf">.1</span><span class="o">-</span><span class="n">Windows</span><span class="o">-</span><span class="n">Release</span><span class="o">-</span><span class="n">Package</span><span class="o">/</span><span class="n">exe</span><span class="o">/.</span><span class="n">basex</span><span class="p">:</span> <span class="n">writing</span> <span class="n">new</span> <span class="n">configuration</span> <span class="n">file</span><span class="o">.</span>
+<span class="n">Model</span> <span class="n">run</span> <span class="n">completed</span><span class="o">.</span>
+<span class="n">Model</span> <span class="n">exiting</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="n">请按任意键继续</span><span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>直到出现<code class="docutils literal notranslate"><span class="pre">请按任意键继续</span></code>之后，才可以关闭运行的界面。如果在<code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">run</span> <span class="pre">completed</span></code>出现后就关闭界面，则会出现无法读取输出的情况。</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ModelInterface</span></code>文件夹中包含了读取结果的文件，点击<code class="docutils literal notranslate"><span class="pre">run-model-interface.bat</span></code>文件后，左上角<code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Open</span></code>-<code class="docutils literal notranslate"><span class="pre">DB</span> <span class="pre">Open</span></code>，选择<code class="docutils literal notranslate"><span class="pre">output</span></code>文件夹中<code class="docutils literal notranslate"><span class="pre">database_basexdb</span></code>即可读取刚刚GCAM-China运行的基准情景(Reference)结果。
+<img alt="读取结果页面" src="_images/resultspage.png" /></p></li>
+</ul>
+<section id="java">
+<span id="lab1"></span><h3>Java环境配置<a class="headerlink" href="#java" title="Link to this heading">#</a></h3>
+<p>XML parsing complete.
+Starting new scenario: Reference
+Mon Jun 30 21:18:15 2025:WARNING:Hector::Logger::printLogHeader: hector version 3.2.0
+Mon Jun 30 21:18:15 2025:WARNING:Hector::Logger::printLogHeader: hector version 3.2.0
+SEVERE ERROR:geothermal in China is not related to any other activities.
+SEVERE ERROR:offshore wind resource in China is not related to any other activities.
+SEVERE ERROR:onshore carbon-storage in China is not related to any other activities.
+Starting a model run. Running all periods.
+Model run beginning.
+Period 0: 1975
+Model solved with last period’s prices.</p>
+<p>Period 1: 1990
+Model solved normally. Iterations period 1: 113. Total iterations: 114</p>
+<p>Period 2: 2005
+Model solved normally. Iterations period 2: 142. Total iterations: 255</p>
+<p>Period 3: 2010
+Model solved normally. Iterations period 3: 88. Total iterations: 342</p>
+<p>Period 4: 2015
+Model solved normally. Iterations period 4: 85. Total iterations: 427</p>
+<p>Period 5: 2020
+Model solved normally. Iterations period 5: 564. Total iterations: 991</p>
+<p>Period 6: 2025
+Model solved normally. Iterations period 6: 392. Total iterations: 1383</p>
+<p>Period 7: 2030
+Model solved normally. Iterations period 7: 223. Total iterations: 1605</p>
+<p>Period 8: 2035
+Model solved normally. Iterations period 8: 111. Total iterations: 1716</p>
+<p>Period 9: 2040
+Model solved normally. Iterations period 9: 170. Total iterations: 1885</p>
+<p>Period 10: 2045
+Model solved normally. Iterations period 10: 108. Total iterations: 1993</p>
+<p>Period 11: 2050
+Model solved normally. Iterations period 11: 110. Total iterations: 2102</p>
+<p>Period 12: 2055
+Model solved normally. Iterations period 12: 95. Total iterations: 2197</p>
+<p>Period 13: 2060
+Model solved normally. Iterations period 13: 94. Total iterations: 2290</p>
+<p>Period 14: 2065
+Model solved normally. Iterations period 14: 102. Total iterations: 2391</p>
+<p>Period 15: 2070
+Model solved normally. Iterations period 15: 107. Total iterations: 2497</p>
+<p>Period 16: 2075
+Model solved normally. Iterations period 16: 97. Total iterations: 2594</p>
+<p>Period 17: 2080
+Model solved normally. Iterations period 17: 99. Total iterations: 2692</p>
+<p>Period 18: 2085
+Model solved normally. Iterations period 18: 96. Total iterations: 2788</p>
+<p>Period 19: 2090
+Model solved normally. Iterations period 19: 96. Total iterations: 2883</p>
+<p>Period 20: 2095
+Model solved normally. Iterations period 20: 97. Total iterations: 2980</p>
+<p>Period 21: 2100
+Model solved normally. Iterations period 21: 95. Total iterations: 3074</p>
+<p>All model periods solved correctly.
+Mon Jun 30 21:32:26 2025:WARNING:Hector::Logger::printLogHeader: hector version 3.2.0
+Model run completed.
+Printing output
+Starting output to XML Database.
+D:/我的文件/学习资料6/GCAM-China v7.1/gcam-china-v7.1-Windows-Release-Package/exe/.basex: writing new configuration file.
+Model run completed.
+Model exiting successfully.
+请按任意键继续…</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,6 +568,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>2.1 GCAM-China 基准情景</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#java">Java环境配置</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
