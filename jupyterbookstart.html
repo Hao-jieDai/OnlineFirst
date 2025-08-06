@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -380,12 +380,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>1.1 Jupyter Book 安装</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1.2 Jupyter Book 构建的一般流程</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>1.3 Jupyter Book 创建模板书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><font color="#cd7372" face="Times New Roman"> <strong>在线网址</strong></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1.1 Jupyter Book 安装</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>1.2 Jupyter Book 构建的一般流程</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>1.3 Jupyter Book 创建模板书</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-yml"><strong>1.3.1 书籍配置文件(_config.yml)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toc-yml"><strong>1.3.2 目录文件(_toc.yml)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>1.3.3 内容文件</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1.3.3 内容文件</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown files</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-files">Jupyter Notebook files</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown-files">MyST Markdown files</a></li>
@@ -393,23 +394,23 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1.4 Jupyter Book 构建图书</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>1.4.1 源文件与构建文件</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>1.4.2 关于页面缓存</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>1.4 Jupyter Book 构建图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>1.4.1 源文件与构建文件</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>1.4.2 关于页面缓存</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html"><strong>1.4.3 预览构建的HTML</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>1.4.4 创建自己的内容文件并输出</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>1.4.4 创建自己的内容文件并输出</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>1.5 Jupyter Book 发布图书</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>1.5.1 为书籍创建在线仓库</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>1.5 Jupyter Book 发布图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>1.5.1 为书籍创建在线仓库</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git">关于Git的下载</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-pages"><strong>1.5.2 使用 GitHub Pages 在线发布书籍</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>1.5.3 书籍后续的更新</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>1.5.3 书籍后续的更新</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>1.6 Jupyter Book 示例项目</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>1.6 Jupyter Book 示例项目</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -425,7 +426,11 @@ document.write(`
 <h1>一、Jupyter Book 入门<a class="headerlink" href="#jupyter-book" title="Link to this heading">#</a></h1>
 <p><strong>以下内容参考自<a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book官方文档</a>，结合自身实际操作总结完整流程。</strong></p>
 <section id="id1">
-<h2><strong>1.1 Jupyter Book 安装</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><font face="Times New Roman" color=#cd7372> <strong>在线网址</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://hao-jiedai.github.io/OnlineFirst/"><code class="docutils literal notranslate"><span class="pre">https://hao-jiedai.github.io/OnlineFirst/</span></code></a></font></p>
+</section>
+<section id="id2">
+<h2><strong>1.1 Jupyter Book 安装</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>首先需要安装 Jupyter Book，pip具体命令如下：</p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">-U</span> <span class="n">jupyter-book</span>
 </pre></div>
@@ -457,8 +462,8 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h2><strong>1.2 Jupyter Book 构建的一般流程</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><strong>1.2 Jupyter Book 构建的一般流程</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>构建Jupyter Book大致可以分为以下三个步骤：</p>
 <ul class="simple">
 <li><p><strong>1.创建图书(Create your book’s context)</strong>。通过文件夹、文件和配置的集合来构建书籍的具体内容。</p></li>
@@ -467,8 +472,8 @@ document.write(`
 </ul>
 <p>以下三小节内容将以官网提供的模板书为例，熟悉完整流程。</p>
 </section>
-<section id="id3">
-<h2><strong>1.3 Jupyter Book 创建模板书</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><strong>1.3 Jupyter Book 创建模板书</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>通过构建一个模板书，来对Jupyter Book的书籍结构有一个初步的认知。<br />
 Jupyter Book捆绑了一个轻量级示例书，以帮助使用者了解书籍的结构。<br />
 在通过构建一个模板书之前，建议先创建一个文件夹，<strong>并在powershell中进入这个文件夹来实现接下来的操作</strong>。<br />
@@ -528,8 +533,8 @@ Jupyter Book捆绑了一个轻量级示例书，以帮助使用者了解书籍�
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h3><strong>1.3.3 内容文件</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3><strong>1.3.3 内容文件</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>文本文件集合构成了图书的内容。这些文件可以是多种类型的文件之一，例如：markdown(<code class="docutils literal notranslate"><span class="pre">.md</span></code>)、Jupyter Notebook(<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) 或reStructuredText(<code class="docutils literal notranslate"><span class="pre">.rst</span></code>)文件。<br />
 模板书对于上述三种类型的文件分别给出了一个示例：</p>
 <ul class="contains-task-list simple">
@@ -578,8 +583,8 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 </section>
 </section>
 </section>
-<section id="id5">
-<h2><strong>1.4 Jupyter Book 构建图书</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2><strong>1.4 Jupyter Book 构建图书</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>添加了文件内容并完善了书籍配置之后，就可以构建(build)图书了。在命令行中使用<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code>来构建图书。<br />
 目前Jupyter Book支持两种格式的书籍输出，分别是HTML网站和基于HTML网站导出的PDF格式文件。在本节中重点介绍HTML格式的书籍输出。<br />
 以前文提及的testbook文件为例，使用以下命令行来构建图书：</p>
@@ -593,22 +598,22 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 <p>输出完成后，将会在testbook文件夹中观察到出现名为<code class="docutils literal notranslate"><span class="pre">build</span></code>的文件夹，进入其中的HTML文件夹后，即可以打开HTML格式的书籍。<br />
 <img alt="testbook示例图片" src="_images/testbook_HTML.png" /></p>
 <p><strong>先决条件</strong>：为了保证每个页面都能成功构建HTML，需要完整按照上述的步骤来进行操作。在<code class="docutils literal notranslate"><span class="pre">testbook</span></code>文件夹中，应当要有一个目录文件<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>，一个配置文件<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>，以及一个notebook或者markdown文件的集合。</p>
-<section id="id6">
-<h3><strong>1.4.1 源文件与构建文件</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h3><strong>1.4.1 源文件与构建文件</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>此时，文件夹中已经创建了Jupyter Notebook文件、Markdown文件和配置文件(包括<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>和<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>)的组合。这些文件是源文件。<br />
 源文件包含Jupyter Book构建书籍所需的所有内容和配置。<br />
 此外，目前也已经在<code class="docutils literal notranslate"><span class="pre">build</span></code>文件夹中创建了书籍输出的集合。该文件夹包含了使用jb的build命令之后的所有输出，这些文件用于在浏览器中查看内容或与他人共享。<br />
 发布图书的最佳实践是为源文件和构建文件使用单独的分支。稍后将做详细介绍。</p>
 </section>
-<section id="id7">
-<h3><strong>1.4.2 关于页面缓存</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3><strong>1.4.2 关于页面缓存</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>默认情况下，Jupyter Book将仅为自上次构建书籍以来已更新的页面构建 HTML。<br />
 如果要强制Jupyter Book重新构建特定页面，可以编辑书籍文件夹中的相应文件，或删除<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹中该页面的HTML。
 还可以使用<code class="docutils literal notranslate"><span class="pre">--all</span></code>选项发出完全重建的命令。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="o">--</span><span class="nb">all</span> <span class="n">testbook</span>
 </pre></div>
 </div>
-<p id="id8">或者使用<code class="docutils literal notranslate"><span class="pre">-clean</span></code>将该书籍删去之后再重新构建</p>
+<p id="id9">或者使用<code class="docutils literal notranslate"><span class="pre">-clean</span></code>将该书籍删去之后再重新构建</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jb</span> <span class="n">build</span> <span class="n">clean</span> <span class="n">testbook</span>
 </pre></div>
 </div>
@@ -618,8 +623,8 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 <p>可以直接在<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>文件夹中查看HTML。<br />
 或者在浏览器中输入HTML所在的路径，例如<code class="docutils literal notranslate"><span class="pre">file:///D:/JupyterBook/testbook/_build/html/intro.html</span></code>。</p>
 </section>
-<section id="id9">
-<h3><strong>1.4.4 创建自己的内容文件并输出</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id10">
+<h3><strong>1.4.4 创建自己的内容文件并输出</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>创建自己的内容文件并输出大致可以分为以下三个步骤，此处参考官网给出的示例进行演示。</p>
 <ul>
 <li><p><strong>1.创建一个内容文件</strong><br />
@@ -664,16 +669,16 @@ Jupyter Notebook结合了计算内容和叙述内容，即可以加入<code clas
 </li>
 </ul>
 <p>交叉引用的展示:<br />
-<a class="reference internal" href="#id8"><span class="std std-ref">跳转至“或者使用<code class="docutils literal notranslate"><span class="pre">-clean</span></code>”前方</span></a><br />
+<a class="reference internal" href="#id9"><span class="std std-ref">跳转至“或者使用<code class="docutils literal notranslate"><span class="pre">-clean</span></code>”前方</span></a><br />
 <strong>不一定要引用到标题，可以是任何地方。</strong><br />
 <a class="reference internal" href="markdown.html"><span class="std std-doc">跳转至“Markdown Files”该节</span></a></p>
 </section>
 </section>
-<section id="id10">
-<h2><strong>1.5 Jupyter Book 发布图书</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
-<p>为图书构建了HTML之后，可以进行在线托管。在官方教程中，介绍了如何使用GitHub Pages来在线发布(publish)图书。</p>
 <section id="id11">
-<h3><strong>1.5.1 为书籍创建在线仓库</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<h2><strong>1.5 Jupyter Book 发布图书</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>为图书构建了HTML之后，可以进行在线托管。在官方教程中，介绍了如何使用GitHub Pages来在线发布(publish)图书。</p>
+<section id="id12">
+<h3><strong>1.5.1 为书籍创建在线仓库</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>为了将托管的书籍和书籍的源文件相连接，需要将图书的源文件放在公共仓库中。</p>
 <ul>
 <li><p>1.首先，登录 GitHub，然后进入 <a class="reference external" href="https://github.com/new">“create a new repository” 页面</a>。</p></li>
@@ -788,8 +793,8 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
 本地地址为：<br />
 [<code class="docutils literal notranslate"><span class="pre">file:///D:/JupyterBook/OnlineFirst/_build/html/intro.html</span></code>]</p>
 </section>
-<section id="id12">
-<h3><strong>1.5.3 书籍后续的更新</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<section id="id13">
+<h3><strong>1.5.3 书籍后续的更新</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>要更新在线书籍，需要在仓库的<code class="docutils literal notranslate"><span class="pre">main</span></code>分支上更改图书的内容。<br />
 使用<code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">testbook</span></code>重新构建图书<br />
 和之前一样使用<code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code>将重新构建的HTML推送到<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>分支上。<br />
@@ -819,8 +824,8 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
 </ul>
 </section>
 </section>
-<section id="id13">
-<h2><strong>1.6 Jupyter Book 示例项目</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<section id="id14">
+<h2><strong>1.6 Jupyter Book 示例项目</strong><a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <p>Jupyter Book官网给出了一个<a class="reference external" href="https://jupyterbook.org/en/stable/start/example-book.html">迷你书的示例项目</a>，在这里给出。<br />
 迷你书给出了一些功能展示：</p>
 <ul class="simple">
@@ -923,12 +928,13 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>1.1 Jupyter Book 安装</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1.2 Jupyter Book 构建的一般流程</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>1.3 Jupyter Book 创建模板书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><font color="#cd7372" face="Times New Roman"> <strong>在线网址</strong></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1.1 Jupyter Book 安装</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>1.2 Jupyter Book 构建的一般流程</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>1.3 Jupyter Book 创建模板书</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-yml"><strong>1.3.1 书籍配置文件(_config.yml)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toc-yml"><strong>1.3.2 目录文件(_toc.yml)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>1.3.3 内容文件</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1.3.3 内容文件</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown files</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-files">Jupyter Notebook files</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown-files">MyST Markdown files</a></li>
@@ -936,23 +942,23 @@ ghp-import的工作原理是将构建的书籍的所有内容（即<code class="
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1.4 Jupyter Book 构建图书</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>1.4.1 源文件与构建文件</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>1.4.2 关于页面缓存</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>1.4 Jupyter Book 构建图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>1.4.1 源文件与构建文件</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>1.4.2 关于页面缓存</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html"><strong>1.4.3 预览构建的HTML</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>1.4.4 创建自己的内容文件并输出</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>1.4.4 创建自己的内容文件并输出</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>1.5 Jupyter Book 发布图书</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>1.5.1 为书籍创建在线仓库</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>1.5 Jupyter Book 发布图书</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>1.5.1 为书籍创建在线仓库</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git">关于Git的下载</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-pages"><strong>1.5.2 使用 GitHub Pages 在线发布书籍</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>1.5.3 书籍后续的更新</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>1.5.3 书籍后续的更新</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>1.6 Jupyter Book 示例项目</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>1.6 Jupyter Book 示例项目</strong></a></li>
 </ul>
   </nav></div>
 
